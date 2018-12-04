@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registrar-se</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
+    <script src="firebaseConfig.js"></script>
+    <link href="style_registration.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <img src="img/workout_login.jpg" id="img_bg" alt="">
+    <div class="container">
+      <div class="col-12 text-center">
+        <h1 class="title-style">Preencha o formulário</h1>
+      </div>
+      <hr>
+      <div class="row text-center">
+        <div class="col-md-6">
+            <label class="lead" for="txtEmail">Email e senha para conectar-se</label>
+            <input id="txtEmail" type="email" placeholder="Email" class="form-control" required autofocus>
+            <input id="txtPassword" type="password" placeholder="Senha" class="form-control" required>
+
+            <br>
+
+            <label class="lead" for="txtName">Dados pessoais</label>
+            <input id="txtName" type="text" placeholder="Nome completo" class="form-control" required>
+            <input id="txtAdress" type="text" placeholder="Endereço, Número" class="form-control" required>
+            <input id="txtPhone" type="text" placeholder="Telefone (DDD) XXXXX-XXXX" class="form-control" required>
+            <br>
+            <label class="lead" for="ageDiv">Data de nascimento</label>
+            <div class="input-group" id="ageDiv">
+              <input id="txtAgeDay" type="text" placeholder="Dia" required>
+              <input id="txtAgeMonth" type="text" placeholder="Mês" required>
+              <input id="txtAgeYear" type="text" placeholder="Ano" required>
+            </div>
+            <br>
+
+            <label class="lead" for="txtNameEm">Em caso de emergência</label>
+            <input id="txtNameEm" type="text" placeholder="Nome completo" class="form-control" required>
+            <input id="txtPhoneEm" type="text" placeholder="Telefone" class="form-control" required>
+        </div>
+        <div class="col-md-6 healthy_history">
+                <h4>Histórico de saúde</h4>
+                <br>
+                <label class="lead" for="select1">Você fuma?</label>
+                <br>
+                <select id="select1" onchange="getSelectValue('select1', 'hide1')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+
+                <div id="hide1">
+                    <label class="lead" for="selectHide1">Quanto?</label>
+                    <br>
+                  <select id="selectHide1">
+                    <option value="choose">...</option>
+                    <option value="pouco">< 1 maço/dia</option>
+                    <option value="muito">> 1 maço/dia</option>
+                  </select>
+                </div>
+                <br>
+
+                <label class="lead" for="paSelect">Seu médico aferiu uma P.A muito alta ou baixa?</label>
+                <select id="paSelect">
+                  <option value="choose">...</option>
+                  <option value="Alta">PA Alta</option>
+                  <option value="Baixa">PA Baixa</option>
+                  <option value="Sem alteração">Sem alteração na PA</option>
+                </select>
+                <br>
+
+                <label for="diaSelect" class="lead">Possui diabéticos na família?</label>
+                <br>
+                <select id="diaSelect">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <br>
+
+                <label for="select2" class="lead">Possuí algum problema cardíaco conhecido?</label>
+                <select id="select2" onchange="getSelectValue('select2', 'hide2')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <div id="hide2">
+                  <input type="text" placeholder="Qual(ais)?" id="familyIssue" class="form-control" required>
+                </div>
+                <br>
+
+                <label for="select3" class="lead">Você está com sobrepeso?</label>
+                <br>
+                <select id="select3" onchange="getSelectValue('select3', 'hide3')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <div id="hide3">
+                  <input type="text" placeholder="Quanto?" id="heightIssue" class="form-control" required>
+                </div>
+                <br>
+
+                <label for="select4" class="lead">Você tem quaisquer lesões ou problemas ortopédicos (bursite, dores nos joelhos, dores nas costas, etc.)?</label>
+                <select id="select4" onchange="getSelectValue('select4', 'hide4')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <div id="hide4">
+                  <input type="text" placeholder="Aonde?" id="hurtIssue" class="form-control" required>
+                </div>
+                <br>
+
+                <label for="select5" class="lead">Toma algum medicamento prescrito ou suplementos?</label>
+                <select id="select5" onchange="getSelectValue('select5', 'hide5')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <div id="hide5">
+                  <input type="text" placeholder="Qual(ais)?" id="medicineIssue" class="form-control" required>
+                </div>
+                <br>
+
+                <label for="select6" class="lead">Pratica alguma atividade física regularmente?</label>
+                <select id="select6" onchange="getSelectValue('select6', 'hide6')">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+                <div id="hide6">
+                  <input type="text" placeholder="Qual(ais)?" id="activityIssue" class="form-control" required>
+                </div>
+                <br>
+
+                <label for="colSelect" class="lead">Seu nível de colesterol já esteve alto?</label>
+                <br>
+                <select id="colSelect">
+                  <option value="choose">...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                  <option value="Não sei">Não sabe</option>
+                </select>
+        </div>
+        <div class="col-12 text-center">
+            <button id="btnSignUp" class="btn btn-lg btn-primary">Registrar</button>
+        </div>
+      </div>
+    </div>
+    <script src="hideThings.js"></script>
+    <script src="app3.js"></script>
+  </body>
+</html>

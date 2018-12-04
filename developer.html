@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Enviar Feedback</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+	<link href="dev.css" rel="stylesheet">
+
+	<!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
+	<script src="firebaseConfig.js"></script>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+<div class="container-fluid bg-navBar">
+	<h3 class="icon_t20">T20 Funcional</h3>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse customColor" id="navbarResponsive">
+		<ul class="navbar-nav ml-auto">
+
+			<li onclick="logoutLink()" class="nav-item">
+				<a href="index.html" class="nav-link">Sair</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row text-center">
+		<div class="col-md-3">
+			<h2>Requests.</h2>
+      <hr>
+      <div class="accordion" id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Pedido #1
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Arrumar icones das janelas de navegação
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                Pedido #2
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Arrumar icones das janelas de navegação
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		<div class="col-md-3">
+      <h2>Now.</h2>
+      <hr>
+      <div class="input-group mb-3">
+        <input id="inputNowData" type="text" class="form-control" placeholder="New item">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="addItemNow">+</button>
+        </div>
+      </div>
+      <div id="itemsNow">
+      </div>
+		</div>
+    <div class="col-md-3">
+      <h2>Further.</h2>
+      <hr>
+      <div class="input-group mb-3">
+        <input id="inputFurtherData" type="text" class="form-control" placeholder="New item">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="addItemFurther">+</button>
+        </div>
+      </div>
+      <div id="itemsFurther">
+      </div>
+		</div>
+    <div class="col-md-3">
+      <h2>Done.</h2>
+      <hr>
+      <ul id="itemsDone" class="list-group">
+
+      </ul>
+    </div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row text-center">
+		<div class="col-md-6">
+			<h3>Next updates</h3>
+      <ul id="listToUpdate">
+
+      </ul>
+		</div>
+		<div class="col-md-6">
+			<h3>Last updates</h3>
+      <ul id="lastToUpdates">
+
+      </ul>
+		</div>
+	</div>
+</div>
+
+<script src="developer.js"></script>
+
+</body>
+</html>

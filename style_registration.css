@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#img_bg {
+    background-image: url("img/workout_login.jpg");
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title-style {
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: -1px;
+}
+
+.container {
+    width: 85%;
+    max-width: 900px;
+    padding: 20px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    opacity: 0.93;
+}
+
+.input-group input {
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: auto;
+    width: 90px;
+    border-radius: 5px;
+}
+.container .form-control {
+    padding: 10px;
+    font-size: 16px;
+    height: auto;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.container .form-control:focus {
+    z-index: 2;
+}
+
+.healthy_history {
+    margin-bottom: 30px;
+}
+
+.container select {
+    width: 150px !important;
+    margin-bottom: 6px;
+    border-radius: 5px;
+}
+
+.container input {
+    border-left: 4px solid;
+    transition: border-color .5s ease-out;
+}
+.container input:required {
+    border-left-color: #009933;
+}
+
+.container input:invalid {
+    border-left-color: #cc0000;
+}
+
+.container input[type="email"] {
+    margin-bottom: -1px;
+    margin-top:5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.container input[type="password"] {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#txtName {
+    margin-bottom: -1px;
+    margin-top:5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; 
+}
+
+#txtAdress {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#txtPhone {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#txtAge {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#txtNameEm {
+    margin-bottom: -1px;
+    margin-top:5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#txtPhoneEm {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.btn-primary {
+    background-color:#3f4144;
+    border: 1px solid #3f4144;
+}
+
+.btn-primary:hover {
+    background-color:#d5d5d5;
+    border: 1px solid #d5d5d5;
+    color: #3f4144;
+}
+hr {
+    border-width: 2px;
+    border-color: grey;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    
+}
+
+@media (max-width: 768px) {
+    .btn-block  {
+        margin-bottom: 50px;
+    }
+
+    .title-style {
+        font-size: 45px;
+    }
+
+    body {
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 576px) {
+    .title-style {
+        font-size: 30px;
+    }
+    body {
+        background-position: center;
+        background-size: cover;
+    }
+    .input-group input {
+        height: auto;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: auto;
+        width: 60px;
+        border-radius: 5px;
+    }
+}

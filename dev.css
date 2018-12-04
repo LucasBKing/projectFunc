@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.icon_t20 {
+  font-weight: bold;
+  color: #fff;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+nav .navbar-nav li a {
+  color: white !important;
+}
+
+
+
+.navbar {
+  padding: 0;
+}
+/* card-header*/
+.card-header {
+  padding: 0 !important;
+}
+/* card body*/
+.card-body {
+  padding: 0 !important;
+}
+.nav-link {
+  font-size: 1.1em !important;
+}
+.bg-navBar {
+  background-color: #3f4144;
+}
+.minSize {
+  font-size: 192%;
+}
+.btn-margin {
+  margin-left: 20px;
+}
+
+.btn-secondary {
+  background-color: #3f4144;
+  padding: 15px;
+  color: #fff;
+}
+
+.btn {
+    border: 1 solid grey;
+    font-weight: 400;
+    text-align: center;
+
+}
+#itemsDone button {
+  color: grey;
+  border-color: grey;
+  background-color: none;
+  margin-bottom: -1px;
+}
+
+#itemsNow button {
+  border: 1px solid #d82036;
+  color: #d82036;
+  margin-bottom: 4px;
+}
+#itemsNow button:hover {
+  color: #fff !important;
+  border: 2px solid #ff0a21 !important;
+  background-color: #ff0a21 !important;
+
+}
+#itemsFurther button {
+  border: 1px solid #4289bf;
+  color: #4289bf;
+  margin-bottom: 4px;
+}
+#itemsFurther button:hover {
+  border: 2px solid #065999;
+  background-color: #065999;
+  color: #fff;
+}
+
+.btn.outline {
+  background: none;
+  width: auto;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+  /*FIT THE CONTENT INTO THE BUTTON*/
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  /**/
+}
+
+/*---Media Queries --*/
+@media (max-width: 992px) {
+
+}
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
+}
+
+
+
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

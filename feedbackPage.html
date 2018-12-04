@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Enviar Feedback</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+	<link href="style_feedback.css" rel="stylesheet">
+
+	<!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
+	<script src="firebaseConfig.js"></script>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light sticky-top">
+<div class="container-fluid bg-navBar">
+	<h3 class="icon_t20">T20 Funcional</h3>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse customColor" id="navbarResponsive">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="userPage.html">Início</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="feedbackPage.html">Enviar feedback</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="trainings.html">Treinos</a>
+			</li>
+			<li onclick="logoutLink()" class="nav-item">
+				<a href="index.html" class="nav-link">Sair</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</nav>
+
+<!--- Welcome Section -->
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4">Envie seu feedback.</h1>
+		</div>
+		<hr>
+		<div class="col-12">
+            <p class="lead">Tem alguma sugestão?</p>
+            <br>
+            <p class="lead">Descreva abaixo e nos envie, ajude a melhorar a sua performance.</p>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="col-12 text-center">
+        <textarea class="form-control" id="feedContent" rows="5" cols="10"></textarea>
+    </div>
+    <div class="col-12 text-center">
+        <button id="btnFeed" type="button" class="btn btn-lg btn-primary">Enviar feedback</button>
+    </div>
+</div>
+
+
+
+<hr class="my-4">
+<!--- Fixed background -->
+<figure>
+	<div class="fixed-wrap">
+		<div id="fixed">
+		</div>
+	</div>
+</figure>
+
+
+<!--- Footer -->
+<footer>
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-4">
+				<h1 class="icon_t20">T20 Funcional</h3>
+				<hr class="light">
+				<p>55 53 9109-8677</p>
+				<p>t20funcional@gmail.com</p>
+				<p>Rua Rui Barbosa 10</p>
+				<p>Pedro Osório, Rio Grande do Sul</p>
+			</div>
+			<div class="col-md-4 data-footer-margin">
+				<hr class="light">
+				<h5>Horário de atendimento:</h5>
+				<hr class="light">
+				<p>Consultar via whatsapp</p>
+			</div>
+			<div class="col-md-4 data-footer-margin">
+				<hr class="light">
+				<h4>T20 Funcional</h4>
+				<h5>Mais que um treino, uma consciência!</h5>
+				<hr class="light">
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; 2018</h5>
+			</div>
+		</div>
+	</div>
+</footer>
+<script src="feedbackApp.js"></script>
+</body>
+</html>
