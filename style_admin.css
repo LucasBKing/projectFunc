@@ -75,8 +75,11 @@ textarea {
 
 .btn-secondary {
   background-color: #3f4144;
-  padding: 15px;
+  padding: 7px;
+  width: 80%;
   color: #fff;
+  border: none;
+  border-radius: 0px;
 }
 /* btn devPage */
 .btn-dev {

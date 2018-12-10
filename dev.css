@@ -18,7 +18,42 @@ nav .navbar-nav li a {
   color: white !important;
 }
 
+.btn-success {
+  cursor: pointer;
+  padding: 4px;
+  width: 40%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  transition: 0.4s;
+  margin-bottom: 5px;
+}
 
+.btnReq {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 13px;
+  transition: 0.4s;
+}
+.active, .btnReq:hover {
+    background-color: #ccc;
+}
+.panel p {
+  margin-top: 5px;
+  font-size: 13px;
+}
+.panel {
+    padding: 0 10px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
 
 .navbar {
   padding: 0;

@@ -10,7 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
-	<link href="dev.css" rel="stylesheet">
+	<link href="style_feedback.css" rel="stylesheet">
 
 	<!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
@@ -33,7 +33,12 @@
 	</button>
 	<div class="collapse navbar-collapse customColor" id="navbarResponsive">
 		<ul class="navbar-nav ml-auto">
-
+      <li class="nav-item">
+				<a class="nav-link" href="adminPage.html">Alunos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="sendRequest.html">Pedidos</a>
+			</li>
 			<li onclick="logoutLink()" class="nav-item">
 				<a href="index.html" class="nav-link">Sair</a>
 			</li>
@@ -42,68 +47,64 @@
 </div>
 </nav>
 
+<!--- Welcome Section -->
 <div class="container-fluid">
 	<div class="row text-center">
-		<div class="col-md-3">
-			<h2>Requests.</h2>
-      <hr>
-      <div id="requestsDiv">
+		<div class="col-md-4">
+			<h2>Realize um pedido.</h2>
+        <!--
+          Criar um modelo de pedido
+       -->
+      <textarea class="form-control" id="requestContent" rows="5" cols="10"></textarea>
+      <button id="btnRequest" type="button" class="btn btn-lg btn-primary">Enviar pedido</button>
+		</div>
+    <div class="col-md-4">
+      <h2>O que está sendo feito?</h2>
+      <div id="doingNow">
 
       </div>
-		</div>
-		<div class="col-md-3">
-      <h2>Now.</h2>
-      <hr>
-      <div class="input-group mb-3">
-        <input id="inputNowData" type="text" class="form-control" placeholder="New item">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="addItemNow">+</button>
-        </div>
-      </div>
-      <div id="itemsNow">
-      </div>
-		</div>
-    <div class="col-md-3">
-      <h2>Further.</h2>
-      <hr>
-      <div class="input-group mb-3">
-        <input id="inputFurtherData" type="text" class="form-control" placeholder="New item">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="addItemFurther">+</button>
-        </div>
-      </div>
-      <div id="itemsFurther">
-      </div>
-		</div>
-    <div class="col-md-3">
-      <h2>Done.</h2>
-      <hr>
-      <ul id="itemsDone" class="list-group">
+    </div>
+    <div class="col-md-4">
+      <h3>Lista de updates realizados.</h3>
+      <div id="updatesMade">
 
-      </ul>
+      </div>
     </div>
 	</div>
 </div>
 
-<div class="container-fluid">
-	<div class="row text-center">
-		<div class="col-md-6">
-			<h3>Next updates</h3>
-      <ul id="listToUpdate">
 
-      </ul>
-			<button id="sendNewUpdates" type="button" class="btn btn-primary" name="button">Send Updates</button>
-		</div>
-		<div class="col-md-6">
-			<h3>Last updates</h3>
-      <ul id="lastToUpdates">
-
-      </ul>
+<!--- Footer -->
+<footer>
+	<div class="container-fluid padding">
+		<div class="row text-center">
+			<div class="col-md-4">
+				<h1 class="icon_t20">T20 Funcional</h1>
+				<hr class="light">
+				<p>55 53 9109-8677</p>
+				<p>t20funcional@gmail.com</p>
+				<p>Rua Rui Barbosa 10</p>
+				<p>Pedro Osório, Rio Grande do Sul</p>
+			</div>
+			<div class="col-md-4 data-footer-margin">
+				<hr class="light">
+				<h5>Horário de atendimento:</h5>
+				<hr class="light">
+				<p>Consultar via whatsapp</p>
+			</div>
+			<div class="col-md-4 data-footer-margin">
+				<hr class="light">
+				<h4>T20 Funcional</h4>
+				<h5>Mais que um treino, uma consciência!</h5>
+				<hr class="light">
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; 2018</h5>
+			</div>
 		</div>
 	</div>
-</div>
-
-<script src="developer.js"></script>
-
+</footer>
+<script src="requestApp.js"></script>
 </body>
 </html>

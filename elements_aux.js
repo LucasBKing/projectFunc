@@ -4,6 +4,13 @@ const dbTrainings = firebase.database().ref().child("users/");
 // Get main div id
 const divName = document.getElementById('listOfCustomers');
 
+// Get searchDiv and btnSearch
+const divLayerZero = document.getElementById('showUserSearched');
+const btnSearch = document.getElementById('btnSearchUser');
+
+// Get user name searched
+const inputUserData = document.getElementById('inputUserData');
+
 class Div {
   constructor(param) {
     // Creating the div
@@ -11,6 +18,19 @@ class Div {
 
     // Setting the div style
     this.newDiv.setAttribute('style', 'display: none');
+    this.newDiv.setAttribute('id', param);
+
+    return this.newDiv;
+  }
+}
+
+class DivHalf {
+  constructor(param) {
+    // Creating the div
+    this.newDiv = document.createElement('div');
+
+    // Setting the div style
+    this.newDiv.setAttribute('class', 'col-md-3');
     this.newDiv.setAttribute('id', param);
 
     return this.newDiv;
@@ -65,8 +85,11 @@ class Li {
   }
 }
 
-dbForms.orderByKey().on('child_added', snap => {
-      snap.forEach(function(childSnap) {
+
+btnSearch.addEventListener('click', e => {
+  dbForms.orderByKey().on('child_added', snap => {
+    snap.forEach(childSnap => {
+      if(childSnap.val().NomeCompleto.includes(inputUserData.value)) {
         let name = childSnap.val().NomeCompleto;
 
         let li = [];
@@ -138,19 +161,50 @@ dbForms.orderByKey().on('child_added', snap => {
         }
         li[20] = new Li('Quantidade de sobrepeso: ' + heightEx);
 
-        let hiddenMainDiv = new Div(snap.key);
-        let hiddenDivForms = new Div('formsDiv');
+        let divLayerOne = new Div(snap.key);
+        let divLayerFour = new Div('formsDiv');
+        let divLayerThree = new Div('divTwoButtons');
+        let divLayerTwo = new DivHalf('formsAndTrainingsSession');
 
-        let btnForms = new Button('Formulario', hiddenDivForms, ' btn btn-secondary btn-margin');
-        let btnCostumer = new Button(name, hiddenMainDiv, ' btn btn-lg btn-secondary');
+        let btnForms = new Button('Formulario', divLayerFour, ' btn btn-secondary');
+        let btnCostumer = new Button(name, divLayerThree, ' btn btn-secondary');
 
         // Setting the forms on the hidden div
         for(let i = 0; i < 21; i++) {
-          hiddenDivForms.appendChild(li[i]);
+          divLayerFour.appendChild(li[i]);
         }
 
+        divLayerOne.appendChild(btnCostumer);
+        divLayerOne.appendChild(divLayerTwo);
+        divLayerOne.appendChild(divLayerFour);
+
+        divLayerTwo.appendChild(divLayerThree);
+
+        divLayerThree.appendChild(btnForms);
+
+        divLayerZero.appendChild(divLayerOne);
+        /*
         hiddenMainDiv.appendChild(btnForms);
         hiddenMainDiv.appendChild(hiddenDivForms);
+
+        divUser.appendChild(btnConstumer);
+        divUser.appendChild(hiddenMainDiv);
+
+        divSearch.appendChild(divUser);
+        */
+      } else {
+        console.log('nop');
+      }
+    });
+  });
+});
+
+/*
+dbForms.orderByKey().on('child_added', snap => {
+      snap.forEach(function(childSnap) {
+
+
+
 
         let hiddenDivTrainings = new Div('trainsDiv');
         let btnTrainings = new Button('Treinos', hiddenDivTrainings, ' btn btn-secondary btn-margin');
@@ -166,17 +220,13 @@ dbForms.orderByKey().on('child_added', snap => {
                 hiddenMainDiv.appendChild(hiddenDivTrainings);
               });
             }
-
         });
 
-        //Setting the hidden div on the main div
-        divName.appendChild(btnCostumer);
-        divName.appendChild(hiddenMainDiv);
+
 
       });
 });
-
-
+*/
 function logoutLink(){
     firebase.auth().signOut().then(function() {
         // Sign-out successful.
